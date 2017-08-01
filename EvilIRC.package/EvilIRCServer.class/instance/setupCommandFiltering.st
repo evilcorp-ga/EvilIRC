@@ -4,7 +4,7 @@ setupCommandFiltering
 		[self socket isConnected] whileTrue: [ | anArr textArr aCmd aLine |
 			aLine := [self socket nextLine] on: ConnectionClosed do: [].
 			aLine notNil ifTrue: [
-			(aLine beginsWithSubCollection: 'PING') 
+			(aLine beginsWith: 'PING') 
 				ifTrue: [ self sendCommand: 'PONG' ]
 				ifFalse: [  
 					[self log addTextToChannel: aLine] on: ConnectionClosed do: [].
