@@ -1,0 +1,1 @@
+I am a user present on a server and can be seen in what ever channels I'm present in. I'm not 'THIS' user, but users you might want to send a private msg. An example of me is 'ChanServ' or 'NickServ' or a real human being

@@ -1,0 +1,3 @@
+specs
+example
+	self open

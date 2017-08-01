@@ -1,0 +1,1 @@
+I am the primary Graphical Interface for IRC. I provide a facility to add new servers to me and to display servers and channels in tabs.

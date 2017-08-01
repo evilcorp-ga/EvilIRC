@@ -1,0 +1,3 @@
+initialization
+nick
+	^nick

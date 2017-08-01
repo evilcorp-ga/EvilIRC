@@ -1,0 +1,22 @@
+{
+	"commentStamp" : "dusty 7/31/2017 14:58",
+	"super" : "ComposableModel",
+	"category" : "EvilIRC",
+	"classinstvars" : [
+		"host"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"socket",
+		"channels",
+		"host",
+		"port",
+		"nick",
+		"log",
+		"logTab",
+		"actualChannels"
+	],
+	"name" : "EvilIRCServer",
+	"type" : "normal"
+}

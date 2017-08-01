@@ -1,0 +1,1 @@
+I'm an IRC server connection and provide the connection interface using a socket. I have a collection of channels and other indevidual interactions with a server.

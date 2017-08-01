@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "dusty 7/31/2017 14:57",
+	"super" : "ComposableModel",
+	"category" : "EvilIRC",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"log",
+		"name",
+		"channel",
+		"input",
+		"server",
+		"users"
+	],
+	"name" : "EvilIRCChannel",
+	"type" : "normal"
+}
