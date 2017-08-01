@@ -11,8 +11,13 @@ setupCommandFiltering
 					anArr := aLine substrings: ' '.
 					textArr := aLine substrings: ':'.
 					anArr size > 1 ifTrue: [ aCmd := anArr at: 2 ] ifFalse: [ aCmd := 0 ].
-					aCmd asInteger notNil ifTrue: [ self processResponse: aCmd from: textArr ].
-					self processCommand: aCmd from: textArr.
+					aCmd asInteger notNil ifTrue: [ 
+						Transcript crShow: 'Int: ',aCmd,' ', aLine.
+						self processResponse: aCmd from: textArr
+					] ifFalse: [  
+						Transcript crShow: 'Str: ',aCmd,' ', aLine.
+						self processCommand: aCmd from: textArr.
+					]
 				]
 		]]
 	] fork.

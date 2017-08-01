@@ -5,4 +5,4 @@ processPrivMsg: textArr
 		chan := newArr last.
 		usr := (newArr first substrings: '!') first.
 		text := usr,' > ',textArr last.
-		(self actualChannels at: chan) addTextToChannel: text
+		(self getCaseInsensitiveTabNameFor: chan) addTextToChannel: text

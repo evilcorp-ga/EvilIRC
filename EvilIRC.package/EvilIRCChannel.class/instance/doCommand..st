@@ -1,6 +1,6 @@
 accessing
 doCommand: aThing
-	(aThing beginsWithSubCollection: '/') 
+	(aThing beginsWith: '/') 
 	ifTrue: [ | arr newArr aCmd theRest toSend |
 		arr := ((aThing copyFrom: 2 to: aThing size) substrings: ' ') asOrderedCollection.
 		aCmd := arr first veryDeepCopy asUppercase.

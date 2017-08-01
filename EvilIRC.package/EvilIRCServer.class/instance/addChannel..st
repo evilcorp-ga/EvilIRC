@@ -1,7 +1,7 @@
 adding
 addChannel: aString 
 		| aChannel aTab |
-		self actualChannels at: aString ifAbsent: [  
+		(self getCaseInsensitiveTabNameFor: aString ) ifNil: [  
 		aChannel := EvilIRCChannel new name: (aString).
 		aChannel  server: self.
 		aTab := TabModel new.

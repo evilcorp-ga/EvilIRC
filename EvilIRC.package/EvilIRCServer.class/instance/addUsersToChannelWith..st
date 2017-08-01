@@ -6,6 +6,7 @@ addUsersToChannelWith: textArr
 		names := names asSortedCollection collect: [:e | | aUser |
 			aUser := EvilIRCUser new name: e trimBoth.
 			aUser  server: self.
+			(self actualChannels at: aRes) actualUsers add: aUser.
 			aUser 
 		].
 		(self actualChannels at: aRes) users items: names

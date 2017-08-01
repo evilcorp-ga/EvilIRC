@@ -1,7 +1,7 @@
 adding
 addMsgTag: anArr 
 		| aUser aTab aMsg |
-		self actualChannels at: (anArr first) ifAbsent:[
+		(self getCaseInsensitiveTabNameFor: (anArr first)) ifNil:[
 		aUser := EvilIRCUser new name: (anArr first).
 		aUser  server: self.
 		aTab := TabModel new.

@@ -11,7 +11,8 @@
 		"channel",
 		"input",
 		"server",
-		"users"
+		"users",
+		"actualUsers"
 	],
 	"name" : "EvilIRCChannel",
 	"type" : "normal"
