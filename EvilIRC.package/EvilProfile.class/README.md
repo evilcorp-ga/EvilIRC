@@ -1,0 +1,1 @@
+I am a profile that can be used to quickly connect to a server

@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "dusty 8/30/2017 20:30",
+	"super" : "Object",
+	"category" : "EvilIRC",
+	"classinstvars" : [
+		"profiles"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"host",
+		"port",
+		"username",
+		"commands",
+		"autoconnect"
+	],
+	"name" : "EvilProfile",
+	"type" : "normal"
+}
