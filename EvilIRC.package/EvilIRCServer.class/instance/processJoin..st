@@ -1,5 +1,6 @@
 initialization
-processJoin: textArr 
+processJoin: aRes
 	| aChan |
-	aChan := self getCaseInsensitiveTabNameFor: (textArr last).
-	aChan ifNotNil: [ aChan getNames ]
+	aRes target isNil ifFalse: [  
+	aChan := self getCaseInsensitiveTabNameFor: (aRes target).
+	aChan ifNotNil: [ aChan getNames ]]

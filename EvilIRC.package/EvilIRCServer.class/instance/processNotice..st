@@ -1,12 +1,8 @@
 initialization
-processNotice: textArr
-	| aUsr aTab text|
-	aUsr := (textArr first substrings: '!') first.
-	(aUsr includesSubstring: ' ') ifFalse: [  
-		aTab := self getCaseInsensitiveTabNameFor: aUsr.
-		aTab isNil ifTrue: [ self addMsgTag: aUsr ].
-		text := aUsr ,' > ',textArr last.
-		aTab addTextToChannel: text
-	]
-	
+processNotice: aRes
+		| aTab text |
+		aTab := self getCaseInsensitiveTabNameFor: aRes target.
+		aTab isNil ifTrue: [ self addMsgTag: aRes target ].
+		text := aRes target ,' > ',aRes text.
+		text isNil | (aTab isNil) ifFalse: [aTab addTextToChannel: text]	
 	

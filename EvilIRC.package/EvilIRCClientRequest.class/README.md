@@ -1,0 +1,1 @@
+I fake the source, target and command for a channel or user to send to its own server when I am the user trying to send a command

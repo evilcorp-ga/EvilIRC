@@ -1,8 +1,5 @@
 initialization
-processPrivMsg: textArr
-| newArr chan usr text|
-		newArr := (textArr first substrings: ' ') asOrderedCollection collect: [ :e | e trimBoth ].
-		chan := newArr last.
-		usr := (newArr first substrings: '!') first.
-		text := usr,' > ',textArr last.
-		(self getCaseInsensitiveTabNameFor: chan) addTextToChannel: text
+processPrivMsg: aRes
+	self addChannel: aRes.
+	aRes target isNil ifTrue: [ ^nil ].
+		(self getCaseInsensitiveTabNameFor: aRes target) addTextToChannel: aRes channelText

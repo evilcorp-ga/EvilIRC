@@ -1,6 +1,7 @@
 adding
 addMsgTag: anArr 
 		| aUser aTab aMsg |
+		anArr isString ifTrue: [ ^nil ].
 		(self getCaseInsensitiveTabNameFor: (anArr first)) ifNil:[
 		aUser := EvilIRCUser new name: (anArr first).
 		aUser  server: self.

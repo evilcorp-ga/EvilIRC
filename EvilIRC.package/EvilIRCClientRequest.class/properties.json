@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "dusty 9/9/2017 15:47",
+	"super" : "EvilIRCServerResponse",
+	"category" : "EvilIRC",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EvilIRCClientRequest",
+	"type" : "normal"
+}

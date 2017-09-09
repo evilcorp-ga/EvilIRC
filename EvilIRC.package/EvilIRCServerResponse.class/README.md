@@ -1,0 +1,1 @@
+I take a response from an IRC server and figure it out using RFC
