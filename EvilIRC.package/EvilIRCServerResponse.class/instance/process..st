@@ -10,5 +10,7 @@ process: aString
 	source := anArr at: 1.
 	command := anArr at: 2.
 	self setTargetFrom: anArr.
+	(text trimBoth beginsWith: (Character home) asString) ifTrue: [ command := 'ACTION' ].
+	(text trimBoth beginsWith: (Character enter) asString) ifTrue: [ self colour: true ].
+	self isAction ifTrue: [ text := (text copyFrom: 8 to: text size) trimBoth ].
 	self isMode ifTrue: [ text := (aString copyFrom: ((aString indexOfSubCollection: target) + target size) to: aString size) trimBoth ].
-	Transcript crShow: '(',responseString,')(',text asString,')'.

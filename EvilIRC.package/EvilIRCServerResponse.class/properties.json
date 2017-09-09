@@ -9,7 +9,9 @@
 		"source",
 		"command",
 		"target",
-		"text"
+		"text",
+		"tab",
+		"colour"
 	],
 	"name" : "EvilIRCServerResponse",
 	"type" : "normal"

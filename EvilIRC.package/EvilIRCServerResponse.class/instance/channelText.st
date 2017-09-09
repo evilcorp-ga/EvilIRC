@@ -1,3 +1,6 @@
-as yet unclassified
+adding
 channelText
-	^self sourceUser, ' > ', self text
+	self colour ifTrue: [
+		self getTextWithColours
+	].
+	^(self sourceUser, ' > ') asText, self text asText
