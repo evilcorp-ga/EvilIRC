@@ -1,6 +1,6 @@
 accessing
 getCommandFrom: aCmd for: aCol
-	| aRes |
+	| aRes | 
 	aRes := EvilIRCClientRequest 
 		source: self name 
 		target: (aCol ifEmpty: [ nil ] ifNotEmpty: [aCol first]) 
@@ -10,6 +10,11 @@ getCommandFrom: aCmd for: aCol
 	aRes isQuit ifTrue: [ self server sendCommand: 'QUIT' ].
 	aRes isNames ifTrue: [ self getNames ].
 	aRes isMsg ifTrue: [ self server addMsgTag: aRes. ^'PRIVMSG ' ].
-	aRes isAction ifTrue: [ self server processAction: aRes  ].
+	aRes isAction ifTrue: [ 
+		aRes source: self server nick.
+		aRes text: (String streamContents: [:st | aCol do: [:e | st nextPutAll: e; space]]).
+		aRes target: self name.
+		self server sendCommand: 'PRIVMSG ', self name,' ',(Character home asString),'ACTION ',aRes text,(Character home asString).
+		self server processAction: aRes  ].
 	^nil 
 	

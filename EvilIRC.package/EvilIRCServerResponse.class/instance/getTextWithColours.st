@@ -3,6 +3,7 @@ getTextWithColours
 	| aRange colorLocations newText |
 	newText := '' asText.
 	aRange := self text asString allRangesOfSubstring: (Character enter) asString.
+	self text size < 3 ifTrue: [ ^'' ].
 	colorLocations := aRange collect: [ :e | | anOC |
 		anOC := OrderedCollection new.
 		anOC add: (self text asString at: (e + 1) sum).

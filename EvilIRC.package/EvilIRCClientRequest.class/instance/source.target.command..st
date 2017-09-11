@@ -2,4 +2,6 @@ as yet unclassified
 source: aString target: aString2 command: aCaptailizedString
 	source := aString.
 	target := aString2.
-	command := aCaptailizedString
+	aCaptailizedString = 'ME'
+		ifTrue: [ command := 'ACTION' ]
+		ifFalse: [ command := aCaptailizedString ]
