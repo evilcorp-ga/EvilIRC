@@ -9,6 +9,7 @@ setupCommandFiltering
 				ifFalse: [  
 					[self log addTextToChannel: aLine] on: ConnectionClosed do: [].
 					(aLine beginsWith: 'ERROR') ifFalse:[
+					Transcript crShow: aLine.
 					aRes := EvilIRCServerResponse on: aLine.
 						self processCommand: aRes
 				]]

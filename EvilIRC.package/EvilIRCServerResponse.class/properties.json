@@ -11,7 +11,8 @@
 		"target",
 		"text",
 		"tab",
-		"colour"
+		"colour",
+		"kickedUser"
 	],
 	"name" : "EvilIRCServerResponse",
 	"type" : "normal"

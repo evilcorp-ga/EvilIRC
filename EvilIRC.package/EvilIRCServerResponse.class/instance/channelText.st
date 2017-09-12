@@ -3,4 +3,4 @@ channelText
 	self colour ifTrue: [
 		self getTextWithColours
 	].
-	^(self sourceUser, ' > ') asText, self text asText
+	^('[ ',self sourceUser, ' ]    ') asText allBold, self text asText

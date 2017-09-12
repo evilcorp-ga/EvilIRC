@@ -1,3 +1,3 @@
 testing
 isNames
-	^self cmd = 'NAMES'
+	^(self cmd = '353') | (self cmd = 353)

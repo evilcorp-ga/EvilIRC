@@ -1,0 +1,3 @@
+processing
+kickedUser
+	^kickedUser

@@ -10,7 +10,7 @@ initializeWidgets
 				self doCommand: aThing
 			]
 			ifFalse: [ 
-				self addTextToChannel: (self server nick,' > ',aThing) asText.
+				self addTextToChannel: '[ ' asText, self server nick asText allBold, ' ]    ' asText, aThing asText.
 				self channel sourceTextArea setScrollValue: self channel sourceTextArea extent.
 				self server sendCommand: 'PRIVMSG ',self name,' ',aThing
 			 ].

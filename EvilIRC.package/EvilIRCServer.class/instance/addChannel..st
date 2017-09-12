@@ -1,6 +1,7 @@
 adding
 addChannel: aRes
 		| aChannel aTab |
+		aRes target = 'DustyEvilIRC' ifTrue: [ ^nil ].
 		aRes target isNil ifFalse: [  
 		(self getCaseInsensitiveTabNameFor: aRes target) ifNil: [  
 		aChannel := EvilIRCChannel new name: aRes target.
@@ -10,4 +11,5 @@ addChannel: aRes
 		aTab contents: aChannel buildWithSpec.
 		self channels addTab: aTab.
 		self sendCommand: 'JOIN ', aChannel name.
+		self sendCommand: 'NAMES ', aChannel name.
 		self actualChannels at: aChannel name put: aChannel ]]
