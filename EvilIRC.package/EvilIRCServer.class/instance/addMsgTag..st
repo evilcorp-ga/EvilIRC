@@ -1,15 +1,19 @@
 adding
-addMsgTag: anArr 
-		| aUser aTab aMsg |
-		anArr isString ifTrue: [ ^nil ].
-		(self getCaseInsensitiveTabNameFor: (anArr first)) ifNil:[
-		aUser := EvilIRCUser new name: (anArr first).
+addMsgTag: aRes 
+		| aUser aTab |
+		aRes target = 'DustyEvilIRC' ifTrue: [ ^nil ].
+		aTab := (self getCaseInsensitiveTabNameFor: aRes target).
+		aTab ifNil:[
+		aUser := EvilIRCUser new name: (aRes target).
 		aUser  server: self.
 		aTab := TabModel new.
 		aTab label: aUser name.
 		aTab contents: aUser buildWithSpec.
 		self channels addTab: aTab.
-		anArr size > 1 ifTrue: [  
-		aMsg := String streamContents: [ :st | anArr from: 2 to: anArr size do: [ :e | st nextPutAll: e; space ] ] ] ifFalse: [aMsg := ''].
-		self socket sendCommand: 'PRIVMSG ', aUser name,' ',aMsg.
+		self socket sendCommand: 'PRIVMSG ', aUser name,' ',(aRes text) asString.
+		aUser addTextToChannel: (aRes text) asText.
 		self actualChannels at: aUser name put: aUser]
+		ifNotNil: [ 
+			self socket sendCommand: 'PRIVMSG ', aRes target,' ',(aRes text) asString.
+			(self actualChannels at: ((self getCaseInsensitiveTabNameFor: aRes target) name)) addTextToChannel: (aRes text) asText
+		]
